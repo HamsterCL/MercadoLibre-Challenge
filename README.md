@@ -23,23 +23,23 @@ $ git clone --recurse-submodules https://github.com/HamsterCL/MercadoLibre-Chall
 
 ## Docker Compose
 
-# Comienzo / start
+## Comienzo / start
 ```bash
 $ docker-compose up -d
 ```
 
-# Detención / stop
+## Detención / stop
 ```bash
 $ docker-compose down
 ```
 
 ## Contacto
 
-- Author - [Hector Modinger S.](hectormodinger@gmail.com)
+- Author - [Hector Modinger S.](mailto:hectormodinger@gmail.com)
 
 ## Licencia
 
 Licencia [GNU GENERAL PUBLIC LICENSE](LICENSE).
-```
+
 
 
