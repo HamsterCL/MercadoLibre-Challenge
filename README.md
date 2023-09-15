@@ -41,5 +41,9 @@ $ docker-compose down
 
 Licencia [GNU GENERAL PUBLIC LICENSE](LICENSE).
 
+## NOTA
+
+Favor no utilizar MacBook con procesador M1 o M2, compatibilidad de herramientas de prueba aún en desarrollo.
+
 
 
