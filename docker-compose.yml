@@ -1,0 +1,66 @@
+# Command:
+# docker-compose -f docker-compose.yml up -d
+# docker-compose -f docker-compose.yml down
+
+version: '3.8'
+services:
+
+  automation-challenge:
+    container_name: automation-challenge
+    hostname: automation-challenge
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: BFF
+    ports:
+      - "8085:8080"
+    networks:
+      - test
+
+  chrome-changelle:
+    image: selenium/standalone-chrome:latest
+    container_name: chrome-challenge
+    hostname: chrome-challenge
+    ports:
+      - "4444:4444"
+    networks:
+      - test
+    privileged: true
+    shm_size: 2g
+
+  test-automation-challenge:
+    container_name: test-automation-challenge
+    hostname: test-automation-challenge
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: TEST
+    depends_on:
+      - automation-challenge
+      - report-storage
+    volumes:
+      - reports:/app/test/target/site/serenity/
+    networks:
+      - test
+
+  report-storage:
+    image: nginx:1.23
+    container_name: nginx-challenge
+    hostname: nginx-challenge
+    volumes:
+      - reports:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    restart: always
+    depends_on:
+      - automation-challenge
+    networks:
+      - test
+
+networks:
+  test:
+    driver: bridge
+
+volumes:
+  reports:
+    external: false

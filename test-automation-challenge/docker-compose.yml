@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  report-storage:
+    image: nginx:1.23
+    volumes:
+      - ./target/site/serenity/:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    restart: always
+
+volumes:
+  reports:
+    external: true
