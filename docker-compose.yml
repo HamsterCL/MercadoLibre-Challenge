@@ -17,7 +17,7 @@ services:
     networks:
       - test
 
-  chrome-changelle:
+  chrome-challenge:
     image: selenium/standalone-chrome:latest
     container_name: chrome-challenge
     hostname: chrome-challenge
@@ -38,6 +38,7 @@ services:
     depends_on:
       - automation-challenge
       - report-storage
+      - chrome-challenge
     volumes:
       - reports:/app/test/target/site/serenity/
     networks:
