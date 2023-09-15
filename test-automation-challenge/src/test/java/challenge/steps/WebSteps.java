@@ -58,12 +58,10 @@ public class WebSteps {
     @Given("has a list of people in his system and checks it by going to the world view page")
     public void hasAListOfPeopleInHisSystemAndChecksItByGoingToTheWorldViewPage() {
         theActorCalled(administrador.getName()).attemptsTo(OpenWorldViewPageBrowser.on());
-        
     }
 
     @When("to add Diego Maradona")
     public void toAddDiegoMaradona() {
-        
     }
 
     @Then("2 people should appear in the Argentina section of the page.")
