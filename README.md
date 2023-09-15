@@ -19,7 +19,7 @@ El test automatizado comenzará a continuación de la creación y despliegue de 
  - report-storage
  - chrome-challenge.
 
-Los test se encontrarán ejecutados en su totalidad para cuando el contenedor "test-automation-challenge" este detenido. En ese momento puede visitar la <a href="http://localhost:8080">pagina de reporte</a>, en donde se visualizará los resultados de los test ejecutados.
+Los test se encontrarán ejecutados en su totalidad para cuando el contenedor "test-automation-challenge" este detenido. En ese momento puede visitar la <a href="http://localhost:8080" target="_blank">pagina de reporte</a>, en donde se visualizará los resultados de los test ejecutados.
 
 ## Comando Git para clonar solución
 
